@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/IP777/goit-js-hw-13-image-finder/archive/master.zip"
+    "url": "git+https://github.com/IP777/hackathon_js/archive/master.zip"
   },
   "keywords": [],
   "author": "Piter Ivanov <ivanov.piter.86@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/IP777/goit-js-hw-13-image-finder/issues"
+    "url": "https://github.com/IP777/hackathon_js/issues"
   },
-  "homepage": "https://github.com/IP777/goit-js-hw-13-image-finder#readme",
+  "homepage": "https://github.com/IP777/hackathon_js#readme",
   "devDependencies": {
     "@babel/core": "^7.6.4",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
