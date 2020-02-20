@@ -33,11 +33,6 @@
 Если нашли баг открывайте `issue`, обсудим, если пофиксили открывайте
 `pull request`.
 
-## Доп информация к домашке
+## Доп информация
 
-Infine scroll
-
-- JSone Сервер с картинками
-- https://jsonplaceholder.typicode.com/
-- Доп задание
-- https://www.youtube.com/watch?v=ej1TNOG4xwo&t=2880s
+hackatone_js
