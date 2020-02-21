@@ -34,5 +34,4 @@
 `pull request`.
 
 ## Доп информация
-
-https://github.com/luxplanjay/webpack-starter-kit "Webpack сборка Репеты "
+[Webpack сборка Репеты](https://github.com/luxplanjay/webpack-starter-kit)
