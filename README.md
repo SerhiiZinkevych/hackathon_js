@@ -1,11 +1,11 @@
 # Webpack starter kit
 
-[Живая страница](https://luxplanjay.github.io/webpack-starter-kit/) после деплоя
-через `npm run deploy`.
+[Живая страница](https://github.com/IP777/hackathon_js/) после деплоя через
+`npm run deploy`.
 
 ## Использование
 
-- Скачать репо как архив
+- Склонировать репозиторий
 - Переименовать папку под свой проект
 - В консоли перейти в корень проекта
 - Выполнить команду `npm install`
