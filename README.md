@@ -34,4 +34,17 @@
 `pull request`.
 
 ## Доп информация
-[Webpack сборка Репеты](https://github.com/luxplanjay/webpack-starter-kit)
+
+- [Webpack сборка Репеты](https://github.com/luxplanjay/webpack-starter-kit)
+- [Masonry](https://masonry.desandro.com/)
+- `npm install masonry-layout`
+- [infinite-scroll](https://infinite-scroll.com/)
+- `npm install infinite-scroll`
+- [basiclightbox](https://basiclightbox.electerious.com/)
+- `npm install basiclightbox`
+- [PNotify](https://sciactive.com/pnotify/)
+- `npm install --save pnotify`
+- [imagesloaded](https://imagesloaded.desandro.com/)
+- `npm install imagesloaded`
+- [lodash](https://lodash.com/)
+- `npm i --save lodash`
