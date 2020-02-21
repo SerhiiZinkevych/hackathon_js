@@ -35,4 +35,4 @@
 
 ## Доп информация
 
-hackatone_js
+(https://github.com/luxplanjay/webpack-starter-kit "Webpack сборка Репеты ")
