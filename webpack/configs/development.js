@@ -7,8 +7,7 @@ module.exports = env => ({
     filename: '[name].js',
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.css$/,
         use: ['style-loader', 'css-loader', 'postcss-loader'],
       },
@@ -33,6 +32,6 @@ module.exports = env => ({
     quiet: true,
     clientLogLevel: 'warning',
     stats: 'errors-only',
-    open: 'firefox' || 'chrome',
+    open: true,
   },
 });

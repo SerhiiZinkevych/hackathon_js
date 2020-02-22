@@ -1,7 +1,7 @@
-@import url("https://necolas.github.io/normalize.css/8.0.1/normalize.css");
-@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Roboto:300i,400&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap");
+@import url('https://necolas.github.io/normalize.css/8.0.1/normalize.css');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300i,400&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap');
 
 html {
   -webkit-box-sizing: border-box;
@@ -18,7 +18,7 @@ html {
 }
 
 body {
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
   font-weight: 400;
   font-size: 15px;
   line-height: 24px;
@@ -33,7 +33,6 @@ body {
 
 .list {
   list-style: none;
-
 }
 
 .link {
@@ -49,11 +48,12 @@ main {
   width: 1200px;
   margin: 0 auto;
 }
-
+/* ----------------------------Header------------------------------------------------------------------- */
 .page-header {
-  min-height: 1000px;
+  min-height: 50px;
   background-color: aqua;
   background-size: cover;
+  border-radius: 50px;
 }
 
 .page-nav {
@@ -69,21 +69,70 @@ main {
   align-items: center;
 }
 
+.site-logo {
+  display: block;
+  font: 700 20px 'Montserrat';
+  color: rgb(5, 5, 5);
+  text-decoration: none;
+}
+
 .site-navigation {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-preferred-size: 500px;
-  flex-basis: 500px;
+  -ms-flex-preferred-size: 200px;
+  flex-basis: 200px;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  /* transition: color 0.2s linear;*/
+  transition: color 0.2s linear;
 }
 
 .site-navigation__link {
-  font: 400 14px "Montserrat";
+  font: 600 18px 'Montserrat';
   color: rgb(5, 5, 5);
-  /* text-transform: uppercase;
-  transition: color 0.2s linear; */
+  text-transform: uppercase;
+  transition: color 0.2s linear;
+}
+.site-navigation__link:hover {
+  color: #fce38a;
+}
+
+.site-navigation__item::after {
+  display: block;
+  content: '';
+  background-color: #fce38a;
+  width: 100%;
+  height: 3px;
+  opacity: 0;
+  margin-top: 10px;
+  transform: scaleX(0);
+  transition: transform 200ms ease-in-out;
+}
+
+.site-navigation__link:hover {
+  fill: #fce38a;
+}
+
+.site-navigation__item:not(:nth-last-child(-n + 2)):hover::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+/* ----------------------------Search------------------------------------------------------------------- */
+.search-form {
+  display: flex;
+  justify-content: center;
+  width: 350px;
+  margin: 0 auto;
+}
+input {
+  border: none;
+  outline: none;
+  border-radius: 20px;
+}
+input {
+  width: 100%;
+  height: 42px;
+  background: #f9f0da;
+  padding-left: 15px;
 }
