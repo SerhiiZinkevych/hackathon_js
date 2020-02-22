@@ -52,7 +52,7 @@ main {
 
 .page-header {
   min-height: 1000px;
-  background-image: url("../img/banner.jpg");
+  background-color: aqua;
   background-size: cover;
 }
 
