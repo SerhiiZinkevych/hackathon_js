@@ -1,5 +1,24 @@
-<li class="grid-item">
-    {{!-- <div class="photo-card"> --}}
-    <img class="grid-img" src="{{webformatURL}}" alt="{{tags}}" data-larg-image="{{largeImageURL}}" />
-    {{!-- </div> --}}
-</li>
+<div class="film-card">
+    <img src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="filmImg">
+
+    <div class="movieInfo">
+        <h2>{{title}}</h2>
+        <p>vote / votes {{vote_average}} / {{vote_count}}</p>
+        <p>popularity {{popularity}}</p>
+        <p>origin title{{original_title}}</p>
+        <p>genre</p>
+        <ul>{{#each genres}}
+            <li class="genre">{{this.name}}</li>
+            {{/each}}
+        </ul>
+        <article class='about-film'>
+            <h3>About</h3>
+            <p>{{overview}}</p>
+        </article>
+
+        <button data-watched="add-to-watched">Add to watched</button>
+        <button data-queue="add-to-queue">Add to queue</button>
+
+    </div>
+
+</div>
