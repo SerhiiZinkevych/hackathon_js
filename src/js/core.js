@@ -11,6 +11,7 @@ import proxyElement from './proxyElemen';
 import user1 from './users/user1';
 import user2 from './users/user2';
 import user3 from './users/user3';
+import { getPopularFilms, getInfoById, getMoviesByQuery } from './api';
 
 console.log(`${imagesLoaded.name} OK`);
 console.log(`${_.name} OK`);
@@ -23,3 +24,7 @@ console.log(`${proxyElement.name} OK`);
 user1.test();
 user2.test();
 user3.test();
+
+getPopularFilms().then(console.log);
+getInfoById(419704).then(console.log);
+getMoviesByQuery('batman').then(console.log);
