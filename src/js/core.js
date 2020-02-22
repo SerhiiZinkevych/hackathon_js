@@ -27,8 +27,9 @@ user3.test();
 
 api.getPopularFilms().then(console.log);
 api.getInfoById(419704).then(console.log);
-api.getMoviesByQuery('batman').then(console.log);
-api.page = 2;
-api.getMoviesByQuery('batman').then(console.log);
+
+// api.getMoviesByQuery('batman').then(console.log);
+// api.page = 2;
+// api.getMoviesByQuery('batman').then(console.log);
 // console.log(api.getPageFromLink());
 // console.log(api.getMovieIdFromLink());
