@@ -57,8 +57,6 @@ main {
 }
 
 .page-nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   height: 80px;
   -webkit-box-pack: justify;
@@ -77,8 +75,6 @@ main {
 }
 
 .site-navigation {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   -ms-flex-preferred-size: 200px;
   flex-basis: 200px;
