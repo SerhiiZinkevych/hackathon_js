@@ -50,4 +50,4 @@ const movieLocalStorage = {
   },
 };
 
-export default user2;
+export default movieLocalStorage;
