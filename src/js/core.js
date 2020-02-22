@@ -8,7 +8,7 @@ import refs from './refs';
 import myPnotify from './pnotifyAlerts';
 import proxyElement from './proxyElemen';
 //---------------------------------------------------
-import user1 from './users/reloadInt';
+import reloadInt from './users/reloadInt';
 import user2 from './users/user2';
 import user3 from './users/user3';
 import api from './api';
@@ -19,5 +19,12 @@ import api from './api';
 
 refs.serchForm.addEventListener('submit', e => {
   e.preventDefault();
-  api.getMoviesByQuery(refs.textArea.value).then(console.log);
+  const text = refs.textArea.value;
+
+  //console.log(text);
+
+  reloadInt.showCardsByquery(text);
+  //console.log(refs.itemCard);
 });
+
+//console.log(refs.itemCard);
