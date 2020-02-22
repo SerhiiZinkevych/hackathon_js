@@ -3,7 +3,7 @@ import lodash from 'lodash';
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
 //---------------------------------------------------
-import imageCardTamplate from '../template/card.hbs';
+import imageCardTemplate from '../template/card.hbs';
 import refs from './refs';
 import myPnotify from './pnotifyAlerts';
 import proxyElement from './proxyElemen';

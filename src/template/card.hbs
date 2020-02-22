@@ -1,5 +1,27 @@
-<li class="grid-item">
+<img src="{{cardUrl}}" alt="{{filmImg}}">
+
+<div class="movieInfo">
+    <h2>{{movieTitle}}</h2>
+    <p>vote / votes {{}}</p>
+    <p>popularity {{}}</p>
+    <p>origin title{{}}</p>
+    <p>genre</p>
+    <ul>{{#each genre}}
+        <li class="genre">{{this.genre}}</li>
+        {{/each}}
+    </ul>
+<article class='about-film'>
+    <h3>About</h3>
+    <p>{{short_description}}</p>
+</article>
+<button data-watched="add-to-watched">Add to watched</button>
+<button data-queue="add-to-queue">Add to queue</button>
+
+</div>
+
+
+{{!-- <li class="grid-item">
     {{!-- <div class="photo-card"> --}}
-    <img class="grid-img" src="{{webformatURL}}" alt="{{tags}}" data-larg-image="{{largeImageURL}}" />
-    {{!-- </div> --}}
-</li>
+<img class="grid-img" src="{{webformatURL}}" alt="{{tags}}" data-larg-image="{{largeImageURL}}" />
+{{!-- </div> --}}
+</li> --}}
