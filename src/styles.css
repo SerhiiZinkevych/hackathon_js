@@ -132,3 +132,53 @@ input {
   background: #f9f0da;
   padding-left: 15px;
 }
+/* ---------------------------- Footer ------------------------------------------------------------------- */
+.footer {
+  display: block;
+  max-height: 200px;
+  margin-top: 200px;
+}
+/* ---------------------------- Wach Card (card.hbs) ------------------------------------------------------------------- */
+.img-film-card {
+  display: block;
+  float: left;
+  height: 500px;
+  width: 350px;
+  margin-right: 50px;
+  border-radius: 30px;
+}
+
+.movieInfo {
+  display: block;
+  margin-top: 50px;
+}
+
+.movieInfo h2,
+h3 {
+  color: black;
+  padding-bottom: 20px;
+}
+
+.movieInfo ul {
+  display: flex;
+  text-decoration: none;
+  list-style: none;
+  padding-left: 178px;
+  margin-bottom: 30px;
+}
+
+.spase {
+  padding-left: 150px;
+}
+
+.bgrn-p {
+  width: 60%;
+  margin-left: 390px;
+  background-color: rgb(33, 228, 228);
+  border-radius: 40px;
+}
+
+.float-p-genre {
+  display: block;
+  float: left;
+}
