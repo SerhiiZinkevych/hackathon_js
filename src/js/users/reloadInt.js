@@ -10,7 +10,7 @@ const user1 = {
         elem => (elem.release_date = elem.release_date.split('-')[0]),
       );
       // console.log(data.results);
-      const markup = mainPageTemplate(data.results);    
+      const markup = mainPageTemplate(data.results);
       insertCardsToMainPage(markup);
       // console.log(data.results[0].release_date.split('-')[0]);
     });
@@ -31,7 +31,7 @@ const user1 = {
   },
   insertCardsToMainPage(items) {
     refs.cardList.insertAdjacentHTML('beforeend', items);
-  }
+  },
 };
 
 //card(419704);
@@ -43,7 +43,7 @@ const user1 = {
 //       elem => (elem.release_date = elem.release_date.split('-')[0]),
 //     );
 //     // console.log(data.results);
-//     const markup = mainPageTemplate(data.results);    
+//     const markup = mainPageTemplate(data.results);
 //     insertCardsToMainPage(markup);
 //     // console.log(data.results[0].release_date.split('-')[0]);
 //   });
