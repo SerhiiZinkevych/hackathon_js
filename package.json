@@ -1,7 +1,7 @@
 {
   "name": "webpack-starter-kit",
   "version": "1.1.0",
-  "description": "",
+  "description": "[Живая страница](https://github.com/IP777/hackathon_js/) после деплоя через\r `npm run deploy`.",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --env.mode development --config ./webpack/config.js",
@@ -49,6 +49,7 @@
     "webpackbar": "^4.0.0"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "basiclightbox": "^5.0.2",
     "core-js": "^3.3.4",
     "handlebars": "^4.5.3",

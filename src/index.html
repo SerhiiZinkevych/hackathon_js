@@ -4,42 +4,50 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Webpack Starter Kit</title>
-
-    <!-- Don't forget to delete this style tag. -->
-    <style>
-      body {
-        min-height: 100vh;
-        margin: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .intro {
-        text-align: center;
-      }
-
-      .intro h1 {
-        margin-top: 0;
-        font-weight: 500;
-        font-size: 40px;
-      }
-
-      .intro img {
-        display: block;
-        max-width: 100%;
-        height: auto;
-      }
-    </style>
+    <title>Filmoteka</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
 
   <body>
-    <article class="intro">
-      <h1>Webpack starter kit</h1>
+    <header class="page-header">
+      <nav class="container page-nav">
+        <a href="#" class="site-logo">Filmoteka</a>
+        <ul class="list site-navigation">
+          <li class="site-navigation__item">
+            <a href="#" class="link site-navigation__link" id="nav-home"
+              >Home</a
+            >
+          </li>
+          <li class="site-navigation__item">
+            <a href="#" class="link site-navigation__link" id="nav-libery"
+              >My Libery</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="container">
+      <form class="search-form" action="" method="get">
+        <input
+          name="s"
+          placeholder="🔍 Write movie name and click Enter"
+          type="search"
+          id="search-form"
+        />
+      </form>
+      <section>
+        <!-- В этот список рендерим сарточки -->
+        <ul class="card__list">
+          <li class="card__link"></li>
+        </ul>
+      </section>
+    </main>
 
-      <!-- HTML image reference example. -->
-      <img src="./images/intro.png" alt="" width="640" />
-    </article>
+    <footer class="container">
+      <hr />
+      <p class="copyright">
+        © 2020 Filmoteka by Team 1
+      </p>
+    </footer>
   </body>
 </html>
