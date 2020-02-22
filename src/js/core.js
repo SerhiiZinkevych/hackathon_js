@@ -25,6 +25,17 @@ user1.test();
 // user2.test();
 // user3.test();
 
+<<<<<<< HEAD
 // api.getPopularFilms().then(console.log);
 // api.getInfoById(419704).then(console.log);
 // api.getMoviesByQuery('batman').then(console.log);
+=======
+api.getPopularFilms().then(console.log);
+api.getInfoById(419704).then(console.log);
+
+// api.getMoviesByQuery('batman').then(console.log);
+// api.page = 2;
+// api.getMoviesByQuery('batman').then(console.log);
+// console.log(api.getPageFromLink());
+// console.log(api.getMovieIdFromLink());
+>>>>>>> 8e4b177e9c8738d00f5a8aa2fb37bf26690baec6
