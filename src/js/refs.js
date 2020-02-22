@@ -5,6 +5,8 @@ const refs = {
   cardList: document.querySelector('.card__list'),
   serchForm: document.querySelector('.search-form'),
   textArea: document.querySelector('#search-form'),
+  // container: document.querySelector('#container'),
+  // cardList: document.querySelector('.card_list'),
 
   test() {
     console.log(`${Object.getOwnPropertyNames(this)} OK`);

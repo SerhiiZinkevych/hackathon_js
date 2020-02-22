@@ -8,9 +8,9 @@ import refs from './refs';
 import myPnotify from './pnotifyAlerts';
 import proxyElement from './proxyElemen';
 //---------------------------------------------------
-//import user1 from './users/user1';
-//import user2 from './users/user2';
-//import user3 from './users/user3';
+import user1 from './users/reloadInt';
+import user2 from './users/user2';
+import user3 from './users/user3';
 import api from './api';
 
 //user1.test();
