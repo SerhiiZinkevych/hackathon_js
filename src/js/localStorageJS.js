@@ -1,49 +1,75 @@
 const movieLocalStorage = {
-  setWatchedMovieIdToLocalStorage(id) {
+  setWatchedMovieIdToLocalStorage(obj) {
     let watchedArray = localStorage.getItem('watched');
     let parsedWatchedArray = watchedArray ? JSON.parse(watchedArray) : [];
 
-    if (parsedWatchedArray.includes(id)) {
+    let isContain = parsedWatchedArray.find(movie => movie.id === obj.id);
+
+    if (isContain) {
       return;
     };
 
-    parsedWatchedArray.push(id);
+    parsedWatchedArray.push(obj);
 
     localStorage.setItem('watched', JSON.stringify(parsedWatchedArray));
   },
 
-  deleteWatchedMovieIdFromLocalStorage(id) {
+  getWatchedMovieIdToLocalStorage() {
+    const savedArrayOfId = localStorage.getItem('watched');
+    const parsedArrayOfid = JSON.parse(savedArrayOfId);
+
+    return parsedArrayOfid;
+  },
+
+  deleteWatchedMovieIdFromLocalStorage(obj) {
+
     let watchedArray = localStorage.getItem('watched');
+
     let parsedWatchedArray = watchedArray ? JSON.parse(watchedArray) : [];
 
-    if (parsedWatchedArray.includes(id)) {
-      const positionId = parsedWatchedArray.indexOf(id);
+    let isContain = parsedWatchedArray.find(movie => movie.id === obj.id);
+
+    if (isContain) {
+      const positionId = parsedWatchedArray.indexOf(isContain);
+
       parsedWatchedArray.splice(positionId, 1)
     };
 
     localStorage.setItem('watched', JSON.stringify(parsedWatchedArray));
   },
 
-  setQueueMovieIdToLocalStorage(id) {
+  setQueueMovieIdToLocalStorage(obj) {
     let queueArray = localStorage.getItem('queue');
     let parsedQueueArray = queueArray ? JSON.parse(queueArray) : [];
 
-    if (parsedQueueArray.includes(id)) {
+    let isContain = parsedQueueArray.find(movie => movie.id === obj.id);
+
+    if (isContain) {
       return;
     };
 
-    parsedQueueArray.push(id);
+    parsedQueueArray.push(obj);
 
     localStorage.setItem('queue', JSON.stringify(parsedQueueArray));
   },
 
-  deleteQueueMovieIdFromLocalStorage(id) {
+  getQueueMovieIdToLocalStorage() {
+    const savedArrayOfId = localStorage.getItem('queue');
+    const parsedArrayOfid = JSON.parse(savedArrayOfId);
+
+    return parsedArrayOfid;
+  },
+
+  deleteQueueMovieIdFromLocalStorage(obj) {
     let queueArray = localStorage.getItem('queue');
     let parsedQueueArray = queueArray ? JSON.parse(queueArray) : [];
 
-    if (parsedQueueArray.includes(id)) {
-      const positionId = parsedQueueArray.indexOf(id);
-      parsedQueueArray.splice(positionId, 1)
+    let isContain = parsedQueueArray.find(movie => movie.id === obj.id);
+
+    if (isContain) {
+      const positionId = parsedQueueArray.indexOf(isContain);
+
+      parsedQueueArray.splice(positionId, 1);
     };
 
     localStorage.setItem('queue', JSON.stringify(parsedQueueArray));
