@@ -14,6 +14,7 @@ import button from './btn';
 
 button.offSidebar();
 button.offLoadBtn();
+button.offCloseBtn();
 
 refs.serchForm.addEventListener('submit', e => {
   button.onLoadBtn();
@@ -46,3 +47,4 @@ refs.sidebarWatchBtn.addEventListener('click', () => {
 refs.sidebarQueueBtn.addEventListener('click', () => {
   reloadInt.renderLibrary('queue');
 });
+

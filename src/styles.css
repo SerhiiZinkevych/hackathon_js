@@ -62,8 +62,14 @@ body {
 }
 
 .itemCard {
+  height: 300px;
+  width: 550px;
+  border-radius: 3px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   position: relative;
   margin: 8px 8px;
+  background-image: url(http://placehold.it/300x550);
 }
 
 .itemCard img {
@@ -73,6 +79,7 @@ body {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
+
 .itemCard img:hover {
   transform: scale(1.03);
 }
@@ -109,4 +116,39 @@ body {
 .hide {
   display: none;
   visibility: hidden;
+}
+
+.film-card {
+  margin-bottom: 100px;
+}
+
+.slick-dotted {
+  margin-bottom: 80px !important;
+}
+.slider-item > a {
+  position: relative;
+}
+.slider-item > a > h2 {
+  text-decoration: none;
+  position: absolute;
+  top: 80%;
+  /* left: 50%;
+  transform: translateX(-50%); */
+
+  width: 500px;
+  text-align: center;
+  color: aliceblue;
+  text-shadow: 1px 3px 2px black;
+  opacity: 0.8;
+  font-size: 17px;
+  padding: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.similarTitle {
+  margin: 10px;
+  text-align: center;
+  color: rgb(43, 43, 43);
 }

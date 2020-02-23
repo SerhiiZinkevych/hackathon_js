@@ -1,6 +1,7 @@
 import refs from '../refs';
 import cardTemplate from '../../template/card.hbs';
 import mainPageTemplate from '../../template/main-page.hbs';
+import similarMoviesTemplate from '../../template/similar-movies.hbs';
 import api from '../api';
 import localStorageJs from '../localStorageJS';
 import button from '../btn';
@@ -30,11 +31,72 @@ const user1 = {
 
       this.setOnclickAddWatch();
       this.setOnclickAddQueue();
+      api.getSimilarMovies(id).then(data => {
+        const similarMoviesMarkup = similarMoviesTemplate(data.results);
+        this.insertSimilarMoviesToCard(similarMoviesMarkup);
+        //console.log(similarMoviesMarkup);
+        //console.log(data.results);
+        $('.similarMovies').slick({
+          dots: true,
+          infinite: true,
+          speed: 300,
+          slidesToShow: 1,
+          centerMode: true,
+          variableWidth: true,
+          // slidesToScroll: 4,
+          centerPadding: '60px',
+          arrows: true,
+          autoplay: true,
+          responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                infinite: true,
+                dots: true,
+              },
+            },
+            {
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+              },
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+              },
+            },
+            // You can unslick at a given breakpoint now by adding:
+            // settings: "unslick"
+            // instead of a settings object
+          ],
+        });
+      });
+
+      // const similarMoviesMarkup = similarMoviesTemplate(obj);
+      // console.log(similarMoviesMarkup);
+      // console.log(obj.backdrop_path);
+      //  this.insertSimilarMoviesToCard(similarMoviesMarkup);
     });
   },
+
   buildCartTemplate(item) {
     return cardTemplate(item);
   },
+
+  buildSimilarMoviesTemplate(item) {
+    return similarMoviesTemplate(item);
+  },
+
+  insertSimilarMoviesToCard(item) {
+    refs.cardList.insertAdjacentHTML('beforeend', item);
+  },
+
   insertCardToMain(item) {
     refs.cardList.innerHTML = '';
     refs.cardList.innerHTML = item;
@@ -58,9 +120,12 @@ const user1 = {
     // console.log(markup);
     for (const li of markup) {
       li.addEventListener('click', e => {
-        const id = e.currentTarget.dataset.movieid;
-        //console.dir(id);
-        this.card(id);
+        if (e.target.nodeName != 'A') {
+          console.dir(e.target);
+          const id = e.currentTarget.dataset.movieid;
+          //console.dir(id);
+          this.card(id);
+        }
       });
     }
   },
@@ -153,6 +218,13 @@ const user1 = {
     const markup = mainPageTemplate(data);
     this.insertCardsToMainPage(markup);
     this.setOnclick();
+    Array.from(document.querySelectorAll('.close')).map(item => {
+      item.classList.remove('hide');
+      item.addEventListener('click', e => {
+        e.preventDefault();
+        console.log(e.currentTarget.dataset.movieid);
+      });
+    });
   },
 };
 
