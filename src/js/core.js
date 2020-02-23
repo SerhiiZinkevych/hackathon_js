@@ -9,8 +9,6 @@ import myPnotify from './pnotifyAlerts';
 import proxyElement from './proxyElemen';
 //---------------------------------------------------
 import reloadInt from './users/reloadInt';
-import user2 from './users/user2';
-import user3 from './users/user3';
 import api from './api';
 
 //user1.test();
