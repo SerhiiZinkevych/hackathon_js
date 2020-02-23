@@ -24,6 +24,8 @@ const user1 = {
       const markup = cardTemplate(data);
       // console.log(markup);
       this.insertCardToMain(markup);
+      this.rerenderButtons();
+
       this.setOnclickAddWatch();
       this.setOnclickAddQueue();
     });
@@ -144,6 +146,7 @@ const user1 = {
       data = localStorageJs.getQueueMovieIdToLocalStorage();
     }
     refs.textArea.hidden = true;
+    refs.cardList.innerHTML = '';
     const markup = mainPageTemplate(data);
     this.insertCardsToMainPage(markup);
     this.setOnclick();

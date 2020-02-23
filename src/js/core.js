@@ -30,7 +30,7 @@ refs.serchForm.addEventListener('submit', e => {
 const movieId = api.getMovieIdFromLink();
 
 if (movieId) {
-  console.log('here');
+  // console.log('here');
   reloadInt.card(movieId);
 } else {
   reloadInt.mainPage();
@@ -45,3 +45,5 @@ refs.library.addEventListener('click', () => {
 document.querySelector('#loadMore').addEventListener('click', () => {
   reloadInt.showCardsByquery(refs.textArea.value);
 });
+
+api.getSimilarMovies(419704).then(console.log);

@@ -36,4 +36,10 @@ export default {
   getMovieIdFromLink() {
     return location.hash.split('#id=')[1];
   },
+  getSimilarMovies(id) {
+    id = this.getMovieIdFromLink() ? this.getMovieIdFromLink() : id;
+    return axios
+      .get(`/movie/${id}/similar?api_key=${API}`)
+      .then(response => response.data);
+  },
 };
