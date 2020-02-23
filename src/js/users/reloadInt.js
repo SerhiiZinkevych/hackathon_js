@@ -1,8 +1,13 @@
 import refs from '../refs';
 import cardTemplate from '../../template/card.hbs';
 import mainPageTemplate from '../../template/main-page.hbs';
+import similarMoviesTemplate from '../../template/similar-movies.hbs'
 import api from '../api';
 import localStorageJs from '../localStorageJS';
+
+const obj = [{
+  backdrop_path: "/TU9NIjwzjoKPwQHoHshkFcQUCG.jpg"}]
+
 
 const user1 = {
   mainPage() {
@@ -25,11 +30,27 @@ const user1 = {
       this.insertCardToMain(markup);
       this.setOnclickAddWatch();
       this.setOnclickAddQueue();
+
+      const similarMoviesMarkup = similarMoviesTemplate(obj);
+      console.log(similarMoviesMarkup);
+      console.log(obj.backdrop_path);
+       this.insertSimilarMoviesToCard(similarMoviesMarkup);
+
     });
   },
+
   buildCartTemplate(item) {
     return cardTemplate(item);
   },
+
+   buildSimilarMoviesTemplate(item){
+     return similarMoviesTemplate(item);
+   },
+
+   insertSimilarMoviesToCard(item){
+      refs.cardList.insertAdjacentHTML('beforeend', item)
+   },
+
   insertCardToMain(item) {
     refs.cardList.innerHTML = '';
     refs.cardList.innerHTML = item;
