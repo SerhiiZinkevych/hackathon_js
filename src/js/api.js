@@ -1,8 +1,7 @@
 import axios from 'axios';
 import refs from './refs';
 
-axios.defaults.baseURL =
-  'https://cors-anywhere.herokuapp.com/https://api.themoviedb.org/3/';
+axios.defaults.baseURL = 'https://api.themoviedb.org/3/';
 
 const API = '8b49236e6b82eb62c6f5cab7126e8684';
 

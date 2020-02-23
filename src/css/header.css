@@ -50,6 +50,7 @@
 
 .site-navigation {
   display: flex;
+  margin-right: 80px;
   -ms-flex-preferred-size: 200px;
   flex-basis: 200px;
   -webkit-box-pack: justify;
