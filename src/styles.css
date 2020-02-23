@@ -209,3 +209,11 @@ h3 {
   display: none;
   visibility: hidden;
 }
+
+.film-card{
+  margin-bottom: 100px;
+}
+
+.similarMovies{
+  margin-bottom: 100px;
+}
