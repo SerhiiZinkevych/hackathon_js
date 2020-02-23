@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://api.themoviedb.org/3/';
+axios.defaults.baseURL = refs.anti_cors + 'https://api.themoviedb.org/3/';
 
 const API = '8b49236e6b82eb62c6f5cab7126e8684';
 

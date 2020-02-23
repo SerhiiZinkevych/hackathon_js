@@ -1,4 +1,5 @@
 const refs = {
+  anti_cors: 'https://cors-anywhere.herokuapp.com/',
   body: document.querySelector('body'),
   logo: document.querySelector('.site-logo'),
   intro: document.querySelector('.intro'),
