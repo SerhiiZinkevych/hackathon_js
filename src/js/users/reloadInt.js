@@ -6,8 +6,8 @@ import api from '../api';
 import localStorageJs from '../localStorageJS';
 import button from '../btn';
 
-const obj = [{
-  backdrop_path: "/TU9NIjwzjoKPwQHoHshkFcQUCG.jpg"}]
+// const obj = [{
+//   backdrop_path: "/TU9NIjwzjoKPwQHoHshkFcQUCG.jpg"}]
 
 
 const user1 = {
