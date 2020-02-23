@@ -71,7 +71,7 @@ main {
 .site-logo {
   display: block;
   font: 700 20px 'Montserrat';
-  color: rgb(5, 5, 5);
+  color: rgb(66, 65, 65);
   text-decoration: none;
 }
 
@@ -86,20 +86,20 @@ main {
 }
 
 .site-navigation__link {
-  font: 600 18px 'Montserrat';
-  color: rgb(5, 5, 5);
+  font: 600 18px 'Montserrat', sans-serif;
+  color: rgb(112, 112, 112);
   text-transform: uppercase;
   transition: color 0.2s linear;
 }
 
 .site-navigation__link:hover {
-  color: #fce38a;
+  color: #000000;
 }
 
 .site-navigation__item::after {
   display: block;
   content: '';
-  background-color: #fce38a;
+  background-color: #000000;
   width: 100%;
   height: 3px;
   opacity: 0;
@@ -109,10 +109,10 @@ main {
 }
 
 .site-navigation__link:hover {
-  fill: #fce38a;
+  fill: #000000;
 }
 
-.site-navigation__item:not(:nth-last-child(-n + 2)):hover::after {
+.site-navigation__item:hover::after {
   opacity: 1;
   transform: scaleX(1);
 }
@@ -123,26 +123,62 @@ main {
   justify-content: center;
   width: 350px;
   margin: 0 auto;
+  padding-top: 10px;
 }
 
 input {
   border: none;
   outline: none;
   border-radius: 20px;
+  filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.842));
 }
 
 input {
   width: 100%;
   height: 42px;
-  background: #f9f0da;
+  background: #f7f7f7;
   padding-left: 15px;
+}
+
+/* ----------------------------Main-page.hbs------------------------------------------------------------------- */
+.movie-cards {
+  display: flex;
+  flex-wrap: wrap;
+  text-decoration: none;
+  list-style: none;
+  align-content: space-between;
+}
+
+.itemCard {
+  position: relative;
+  margin: 25px 25px;
+}
+
+.itemCard img {
+  height: 250px;
+  width: 550px;
+  border-radius: 30px;
+}
+
+.itemCard h2 {
+  position: absolute;
+  top: 80%;
+  left: 5%;
+  color: aliceblue;
+  text-shadow: 1px 3px 2px black;
 }
 
 /* ---------------------------- Footer ------------------------------------------------------------------- */
 .footer {
   display: block;
+  background-color: aqua;
+  border-radius: 40px;
   max-height: 200px;
   margin-top: 200px;
+}
+
+.footer p {
+  text-align: center;
 }
 
 /* ---------------------------- Wach Card (card.hbs) ------------------------------------------------------------------- */
@@ -163,7 +199,7 @@ input {
 .movieInfo h2,
 h3 {
   color: black;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
 }
 
 .movieInfo ul {
@@ -171,7 +207,7 @@ h3 {
   text-decoration: none;
   list-style: none;
   padding-left: 178px;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 
 .spase {
@@ -188,4 +224,37 @@ h3 {
 .float-p-genre {
   display: block;
   float: left;
+}
+
+.about-film p {
+  padding-right: 100px;
+  margin-bottom: 30px;
+}
+
+.movieInfo button {
+  text-decoration: none;
+  outline: none;
+  display: inline-block;
+  width: 170px;
+  height: 75px;
+  line-height: 45px;
+  border-radius: 45px;
+  margin: 10px 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 3px;
+  font-weight: 600;
+  color: #524f4e;
+  background: rgb(230, 231, 231);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.movieInfo button:hover {
+  background: #2ee59d;
+  box-shadow: 0 15px 20px rgba(46, 229, 157, 0.4);
+  color: white;
+  transform: translateY(-7px);
 }
