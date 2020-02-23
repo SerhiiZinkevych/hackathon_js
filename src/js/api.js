@@ -25,7 +25,10 @@ export default {
       .get(
         `/search/movie?api_key=${API}&page=${this.currPage}&query=${query}&include_adult=false&language=en-US`,
       )
-      .then(response => response.data);
+      .then(response => {
+        this.currPage += 1;
+        return response.data;
+      });
   },
   getPageFromLink() {
     return location.hash.split('#page=')[1];
