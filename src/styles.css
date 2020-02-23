@@ -176,19 +176,6 @@ main {
   text-shadow: 1px 3px 2px black;
 }
 
-/* ---------------------------- Footer ------------------------------------------------------------------- */
-.footer {
-  display: block;
-  background-color: aqua;
-  border-radius: 40px;
-  max-height: 200px;
-  margin-top: 200px;
-}
-
-.footer p {
-  text-align: center;
-}
-
 /* ---------------------------- Wach Card (card.hbs) ------------------------------------------------------------------- */
 .img-film-card {
   display: block;

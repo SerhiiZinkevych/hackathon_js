@@ -1,0 +1,12 @@
+.footer {
+  display: block;
+  position: fixed;
+  background-color: rgb(41, 151, 151);
+  border-radius: 40px;
+  max-height: 200px;
+  margin-top: 200px;
+}
+
+.footer p {
+  text-align: center;
+}

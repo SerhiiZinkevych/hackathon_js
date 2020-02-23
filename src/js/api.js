@@ -5,7 +5,7 @@ axios.defaults.baseURL = 'https://api.themoviedb.org/3/';
 const API = '8b49236e6b82eb62c6f5cab7126e8684';
 
 export default {
-  //picsPerPage: 6,
+  currPage: 1,
   getPopularFilms() {
     return axios
       .get(`/movie/popular/?api_key=${API}`)
@@ -17,13 +17,18 @@ export default {
       .get(`/movie/${id}?api_key=${API}`)
       .then(response => response.data);
   },
-  getMoviesByQuery(query, page = 1) {
-    page = this.getPageFromLink() ? this.getPageFromLink() : page;
+  getMoviesByQuery(query) {
+    this.currPage = this.getPageFromLink()
+      ? this.getPageFromLink()
+      : this.currPage;
     return axios
       .get(
-        `/search/movie?api_key=${API}&page=${page}&query=${query}&include_adult=false&language=en-US`,
+        `/search/movie?api_key=${API}&page=${this.currPage}&query=${query}&include_adult=false&language=en-US`,
       )
-      .then(response => response.data);
+      .then(response => {
+        this.currPage += 1;
+        return response.data;
+      });
   },
   getPageFromLink() {
     return location.hash.split('#page=')[1];

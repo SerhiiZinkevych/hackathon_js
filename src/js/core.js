@@ -16,7 +16,9 @@ import api from './api';
 // user3.test();
 
 refs.serchForm.addEventListener('submit', e => {
+  api.currPage = 1;
   e.preventDefault();
+  refs.cardList.innerHTML = '';
   const text = refs.textArea.value;
 
   //console.log(text);
@@ -37,4 +39,8 @@ if (movieId) {
 refs.library.addEventListener('click', () => {
   // console.log('here');
   reloadInt.renderLibrary();
+});
+
+document.querySelector('#loadMore').addEventListener('click', () => {
+  reloadInt.showCardsByquery(refs.textArea.value);
 });
