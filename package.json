@@ -57,6 +57,7 @@
     "infinite-scroll": "^3.0.6",
     "masonry": "0.0.2",
     "masonry-layout": "^4.2.2",
-    "pnotify": "^4.0.0"
+    "pnotify": "^4.0.0",
+    "slick-carousel": "^1.8.1"
   }
 }

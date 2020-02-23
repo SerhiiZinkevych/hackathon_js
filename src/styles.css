@@ -117,3 +117,38 @@ body {
   display: none;
   visibility: hidden;
 }
+
+.film-card {
+  margin-bottom: 100px;
+}
+
+.slick-dotted {
+  margin-bottom: 80px !important;
+}
+.slider-item > a {
+  position: relative;
+}
+.slider-item > a > h2 {
+  text-decoration: none;
+  position: absolute;
+  top: 80%;
+  /* left: 50%;
+  transform: translateX(-50%); */
+
+  width: 500px;
+  text-align: center;
+  color: aliceblue;
+  text-shadow: 1px 3px 2px black;
+  opacity: 0.8;
+  font-size: 17px;
+  padding: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.similarTitle {
+  margin: 10px;
+  text-align: center;
+  color: rgb(43, 43, 43);
+}
