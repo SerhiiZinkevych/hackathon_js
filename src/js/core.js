@@ -10,10 +10,7 @@ import proxyElement from './proxyElemen';
 //---------------------------------------------------
 import reloadInt from './users/reloadInt';
 import api from './api';
-
-//user1.test();
-// user2.test();
-// user3.test();
+import button from './btn';
 
 refs.serchForm.addEventListener('submit', e => {
   api.currPage = 1;
