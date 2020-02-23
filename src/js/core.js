@@ -12,6 +12,9 @@ import reloadInt from './users/reloadInt';
 import api from './api';
 import button from './btn';
 
+button.offSidebar();
+button.offLoadBtn();
+
 refs.serchForm.addEventListener('submit', e => {
   api.currPage = 1;
   e.preventDefault();
@@ -36,6 +39,7 @@ if (movieId) {
 refs.library.addEventListener('click', () => {
   // console.log('here');
   reloadInt.renderLibrary();
+  button.onSidebar();
 });
 
 document.querySelector('#loadMore').addEventListener('click', () => {
