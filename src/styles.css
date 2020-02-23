@@ -152,3 +152,12 @@ body {
   text-align: center;
   color: rgb(43, 43, 43);
 }
+
+.copyright > a {
+  text-decoration: none;
+  color: rgb(24, 23, 23);
+}
+
+.copyright > a:hover {
+  color: white;
+}

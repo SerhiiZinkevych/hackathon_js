@@ -23,6 +23,18 @@ const btn = {
   onCloseBtn() {
     Array.from(refs.closeBtn).map(item => item.classList.remove('hide'));
   },
+  onWatchBtn() {
+    refs.sidebarWatchBtn.classList.add('active');
+  },
+  offWatchBtn() {
+    refs.sidebarWatchBtn.classList.remove('active');
+  },
+  onQueueBtn() {
+    refs.sidebarQueueBtn.classList.add('active');
+  },
+  offQueueBtn() {
+    refs.sidebarQueueBtn.classList.remove('active');
+  },
 };
 
 export default btn;

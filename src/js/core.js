@@ -35,6 +35,7 @@ if (movieId) {
 refs.library.addEventListener('click', () => {
   reloadInt.renderLibrary();
   button.onSidebar();
+  button.onWatchBtn();
 });
 
 refs.loadMoreBtn.addEventListener('click', () => {
@@ -43,8 +44,11 @@ refs.loadMoreBtn.addEventListener('click', () => {
 
 refs.sidebarWatchBtn.addEventListener('click', () => {
   reloadInt.renderLibrary('watched');
+  button.onWatchBtn();
+  button.offQueueBtn();
 });
 refs.sidebarQueueBtn.addEventListener('click', () => {
   reloadInt.renderLibrary('queue');
+  button.offWatchBtn();
+  button.onQueueBtn();
 });
-

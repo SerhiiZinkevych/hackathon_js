@@ -104,6 +104,9 @@ const user1 = {
   },
   insertCardsToMainPage(items) {
     refs.cardList.insertAdjacentHTML('beforeend', items);
+    // Array.from(document.querySelectorAll('.close')).map(item =>
+    //   item.classList.remove('hide'),
+    // );
   },
   showCardsByquery(query) {
     api.getMoviesByQuery(query).then(data => {
@@ -121,9 +124,7 @@ const user1 = {
     for (const li of markup) {
       li.addEventListener('click', e => {
         if (e.target.nodeName != 'A') {
-          console.dir(e.target);
           const id = e.currentTarget.dataset.movieid;
-          //console.dir(id);
           this.card(id);
         }
       });
@@ -215,14 +216,42 @@ const user1 = {
     }
     refs.textArea.hidden = true;
     refs.cardList.innerHTML = '';
-    const markup = mainPageTemplate(data);
+    let markup = mainPageTemplate(data);
     this.insertCardsToMainPage(markup);
     this.setOnclick();
+
     Array.from(document.querySelectorAll('.close')).map(item => {
       item.classList.remove('hide');
       item.addEventListener('click', e => {
         e.preventDefault();
-        console.log(e.currentTarget.dataset.movieid);
+        const id = e.currentTarget.dataset.movieid;
+        console.log(id);
+
+        if (type === 'watched') {
+          localStorageJs.deleteWatchedMovieIdFromLocalStorage(id);
+          const child = e.currentTarget.parentNode;
+          const parent = child.parentNode;
+          parent.removeChild(child);
+        } else if (type === 'queue') {
+          localStorageJs.deleteQueueMovieIdFromLocalStorage(id);
+
+          const child = e.currentTarget.parentNode;
+          const parent = child.parentNode;
+          parent.removeChild(child);
+        }
+
+        Array.from(document.querySelectorAll('.close')).map(item =>
+          item.classList.remove('hide'),
+        );
+        // item.classList.remove('hide');
+        // if (type === 'watched') {
+        //   data = localStorageJs.getWatchedMovieIdToLocalStorage();
+        // } else if (type === 'queue') {
+        //   data = localStorageJs.getQueueMovieIdToLocalStorage();
+        // }
+        // refs.cardList.innerHTML = mainPageTemplate(data);
+        // // const markup = mainPageTemplate(data);
+        // // this.insertCardsToMainPage(markup);
       });
     });
   },

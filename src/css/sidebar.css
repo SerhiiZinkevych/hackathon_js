@@ -22,7 +22,8 @@
 }
 
 .sidebar_watch:hover,
-.sidebar_queue:hover {
+.sidebar_queue:hover,
+.active {
   color: rgb(255, 255, 255);
   cursor: pointer;
 }
