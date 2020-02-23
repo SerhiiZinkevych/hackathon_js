@@ -12,6 +12,17 @@ const btn = {
   onLoadBtn() {
     refs.loadMoreBtn.classList.remove('hide');
   },
+  offCloseBtn() {
+    const markup = document.querySelectorAll('.close');
+    console.log(markup);
+    for (const li of markup) {
+      li.classList.add('hide');
+      console.log(li);
+    }
+  },
+  onCloseBtn() {
+    Array.from(refs.closeBtn).map(item => item.classList.remove('hide'));
+  },
 };
 
 export default btn;

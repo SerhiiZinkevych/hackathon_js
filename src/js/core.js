@@ -14,6 +14,7 @@ import button from './btn';
 
 button.offSidebar();
 button.offLoadBtn();
+button.offCloseBtn();
 
 refs.serchForm.addEventListener('submit', e => {
   button.onLoadBtn();

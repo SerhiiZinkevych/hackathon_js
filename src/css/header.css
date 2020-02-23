@@ -1,3 +1,21 @@
+@-webkit-keyframes pulsate {
+  50% {
+    color: rgb(0, 0, 0);
+  }
+}
+
+@keyframes pulsate {
+  50% {
+    color: rgb(0, 0, 0);
+  }
+}
+
+#blink7 {
+  color: rgb(255, 254, 254);
+  -webkit-animation: pulsate 5.2s linear infinite;
+  animation: pulsate 5.2s linear infinite;
+}
+
 .page-header {
   position: fixed;
   width: 100%;
@@ -11,6 +29,7 @@
   background-color: rgba(41, 151, 151, 0.8);
   border-radius: 15px 15px 0 0;
 }
+
 .page-nav {
   display: flex;
   height: 80px;

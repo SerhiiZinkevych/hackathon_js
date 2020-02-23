@@ -153,6 +153,9 @@ const user1 = {
     const markup = mainPageTemplate(data);
     this.insertCardsToMainPage(markup);
     this.setOnclick();
+    Array.from(document.querySelectorAll('.close')).map(item =>
+      item.classList.remove('hide'),
+    );
   },
 };
 

@@ -62,8 +62,14 @@ body {
 }
 
 .itemCard {
+  height: 300px;
+  width: 550px;
+  border-radius: 3px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   position: relative;
   margin: 8px 8px;
+  background-image: url(http://placehold.it/300x550);
 }
 
 .itemCard img {
@@ -73,6 +79,7 @@ body {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
+
 .itemCard img:hover {
   transform: scale(1.03);
 }
