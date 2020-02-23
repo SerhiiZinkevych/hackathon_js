@@ -10,13 +10,12 @@ import proxyElement from './proxyElemen';
 //---------------------------------------------------
 import reloadInt from './users/reloadInt';
 import api from './api';
-
-//user1.test();
-// user2.test();
-// user3.test();
+import button from './btn';
 
 refs.serchForm.addEventListener('submit', e => {
+  api.currPage = 1;
   e.preventDefault();
+  refs.cardList.innerHTML = '';
   const text = refs.textArea.value;
 
   //console.log(text);
@@ -37,4 +36,8 @@ if (movieId) {
 refs.library.addEventListener('click', () => {
   // console.log('here');
   reloadInt.renderLibrary();
+});
+
+document.querySelector('#loadMore').addEventListener('click', () => {
+  reloadInt.showCardsByquery(refs.textArea.value);
 });

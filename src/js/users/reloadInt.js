@@ -12,6 +12,7 @@ const user1 = {
       );
       // console.log(data.results);
       const markup = mainPageTemplate(data.results);
+      refs.cardList.innerHTML = '';
       this.insertCardsToMainPage(markup);
       this.setOnclick();
       // console.log(data.results[0].release_date.split('-')[0]);
@@ -36,7 +37,6 @@ const user1 = {
     refs.textArea.hidden = true;
   },
   insertCardsToMainPage(items) {
-    refs.cardList.innerHTML = '';
     refs.cardList.insertAdjacentHTML('beforeend', items);
   },
   showCardsByquery(query) {
