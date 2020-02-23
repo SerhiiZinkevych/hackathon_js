@@ -9,8 +9,6 @@ import myPnotify from './pnotifyAlerts';
 import proxyElement from './proxyElemen';
 //---------------------------------------------------
 import reloadInt from './users/reloadInt';
-import user2 from './users/user2';
-import user3 from './users/user3';
 import api from './api';
 
 //user1.test();
@@ -27,4 +25,16 @@ refs.serchForm.addEventListener('submit', e => {
   //console.log(refs.itemCard);
 });
 
-//console.log(refs.itemCard);
+const movieId = api.getMovieIdFromLink();
+
+if (movieId) {
+  console.log('here');
+  reloadInt.card(movieId);
+} else {
+  reloadInt.mainPage();
+}
+
+refs.library.addEventListener('click', () => {
+  // console.log('here');
+  reloadInt.renderLibrary();
+});
