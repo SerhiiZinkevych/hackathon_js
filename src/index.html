@@ -1,59 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Filmoteka</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
 
-  <body>
-    <header class="page-header">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Filmoteka</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="page-header">
+    <div class="nav-container">
       <nav class="container page-nav">
-        <a href="#" class="site-logo" onclick="location.replace('/')"
-          >Filmoteka</a
-        >
+        <a href="#" class="site-logo" onclick="location.replace('/')">Filmoteka</a>
         <ul class="list site-navigation">
           <li class="site-navigation__item">
-            <a
-              href="#"
-              class="link site-navigation__link"
-              id="nav-home"
-              onclick="location.replace('/')"
-              >Home</a
-            >
+            <a href="#" class="link site-navigation__link" id="nav-home" onclick="location.replace('/')">Home</a>
           </li>
           <li class="site-navigation__item">
-            <a href="#" class="link site-navigation__link" id="nav-libery"
-              >My Library</a
-            >
+            <a href="#" class="link site-navigation__link" id="nav-libery">My Library</a>
           </li>
         </ul>
       </nav>
-    </header>
-    <main class="container" id="container">
-      <form class="search-form" action="" method="get">
-        <input
-          name="s"
-          placeholder="🔍 Write movie name and click Enter"
-          type="search"
-          id="search-form"
-        />
-      </form>
-      <section>
-        <!-- В этот список рендерим сарточки -->
-        <!-- <ul class="card__list">
+    </div>
+    <nav class="sidebar">
+      <input class="sidebar_watch" type="button" value="Add Watch" />
+      <input class="sidebar_queue" type="button" value="Add Queue" />
+    </nav>
+  </header>
+  <main class="container" id="container">
+    <form class="search-form" action="" method="get">
+      <input name="s" placeholder="🔍 Write movie name and click Enter" type="search" id="search-form" />
+    </form>
+    <section>
+      <!-- В этот список рендерим сарточки -->
+      <!-- <ul class="card__list">
           <li class="card__link"></li>
         </ul> -->
-        <div class="card_list container"></div>
-      </section>
-    </main>
+      <div class="card_list container"></div>
+    </section>
+    <input class="loadMoreBtn" type="button" value="Load More......" />
+  </main>
 
-    <footer class="footer">
-      <p class="copyright">
-        © 2020 Filmoteka by Team 1
-      </p>
-    </footer>
-  </body>
+  <footer class="footer">
+    <p class="copyright">
+      © 2020 Filmoteka by Team 1
+    </p>
+  </footer>
+</body>
+
 </html>
