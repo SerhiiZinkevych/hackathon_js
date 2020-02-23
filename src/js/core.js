@@ -16,34 +16,33 @@ button.offSidebar();
 button.offLoadBtn();
 
 refs.serchForm.addEventListener('submit', e => {
+  button.onLoadBtn();
   api.currPage = 1;
   e.preventDefault();
   refs.cardList.innerHTML = '';
   const text = refs.textArea.value;
-
-  //console.log(text);
-
   reloadInt.showCardsByquery(text);
-  //console.log(refs.itemCard);
 });
 
 const movieId = api.getMovieIdFromLink();
 
 if (movieId) {
-  // console.log('here');
   reloadInt.card(movieId);
 } else {
   reloadInt.mainPage();
 }
-
 refs.library.addEventListener('click', () => {
-  // console.log('here');
   reloadInt.renderLibrary();
   button.onSidebar();
 });
 
-document.querySelector('#loadMore').addEventListener('click', () => {
+refs.loadMoreBtn.addEventListener('click', () => {
   reloadInt.showCardsByquery(refs.textArea.value);
 });
 
-api.getSimilarMovies(419704).then(console.log);
+refs.sidebarWatchBtn.addEventListener('click', () => {
+  reloadInt.renderLibrary('watched');
+});
+refs.sidebarQueueBtn.addEventListener('click', () => {
+  reloadInt.renderLibrary('queue');
+});

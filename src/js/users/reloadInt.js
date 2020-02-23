@@ -3,6 +3,7 @@ import cardTemplate from '../../template/card.hbs';
 import mainPageTemplate from '../../template/main-page.hbs';
 import api from '../api';
 import localStorageJs from '../localStorageJS';
+import button from '../btn';
 
 const user1 = {
   mainPage() {
@@ -20,6 +21,7 @@ const user1 = {
   },
   card(id) {
     api.getInfoById(id).then(data => {
+      button.offLoadBtn();
       // console.log(data);
       const markup = cardTemplate(data);
       // console.log(markup);
@@ -139,6 +141,7 @@ const user1 = {
     });
   },
   renderLibrary(type = 'watched') {
+    button.offLoadBtn();
     let data = '';
     if (type === 'watched') {
       data = localStorageJs.getWatchedMovieIdToLocalStorage();
