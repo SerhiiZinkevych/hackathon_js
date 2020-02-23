@@ -183,6 +183,11 @@ input {
 }
 
 /* ---------------------------- Wach Card (card.hbs) ------------------------------------------------------------------- */
+.film-card {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
 .img-film-card {
   display: block;
   float: left;
@@ -190,6 +195,16 @@ input {
   width: 350px;
   margin-right: 50px;
   border-radius: 30px;
+}
+
+.img-film-card:hover {
+  -webkit-animation: notransform 5s infinite;
+  animation: notransform 5s infinite;
+  -webkit-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
 }
 
 .movieInfo {
@@ -259,3 +274,35 @@ h3 {
   color: white;
   transform: translateY(-7px);
 }
+
+/* .container {
+  position: relative;
+  display: inline-block;
+  height: 120px;
+  margin: 0 2em 2em 0;
+  opacity: .7;
+  border-radius: 5px;
+  background: #E4E1E4;
+  -webkit-perspective: 400px;
+  perspective: 400px;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.transform {
+  position: absolute;
+  bottom: 0;
+  background: rgba(65, 245, 254, .5);
+  border-radius: 5px;
+  -webkit-animation: notransform 5s infinite;
+  animation: notransform 5s infinite;
+}
+
+
+.rotateY {
+  -webkit-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+} */
