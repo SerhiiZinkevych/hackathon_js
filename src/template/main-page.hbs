@@ -1,10 +1,11 @@
 <ul class="movie-cards">
     {{#each this}}
     <li class="itemCard" data-movieID="{{id}}">
+        <a href="#id={{id}}" onclick="location.replace('#id={{id}}')">
         <img src="https://image.tmdb.org/t/p/w500{{backdrop_path}}" alt="filmImg">
         <h2>{{title}}</h2>
-        <p>{{release_date}}</p>
-
+        <p>{{release_date}}</p> 
+        </a>
     </li>
     {{/each}}
 </ul>
