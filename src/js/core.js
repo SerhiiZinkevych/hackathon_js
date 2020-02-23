@@ -8,30 +8,23 @@ import refs from './refs';
 import myPnotify from './pnotifyAlerts';
 import proxyElement from './proxyElemen';
 //---------------------------------------------------
-import user1 from './users/reloadInt';
+import reloadInt from './users/reloadInt';
 import user2 from './users/user2';
 import user3 from './users/user3';
 import api from './api';
 
-// console.log(`${imagesLoaded.name} OK`);
-// console.log(`${_.name} OK`);
-// console.log(`${basicLightbox.name} OK`);
-// console.log(imageCardTemplate.name + ' OK');
-refs.test();
-myPnotify.test();
-console.log(`${proxyElement.name} OK`);
-
-user1.test();
+//user1.test();
 // user2.test();
 // user3.test();
 
+refs.serchForm.addEventListener('submit', e => {
+  e.preventDefault();
+  const text = refs.textArea.value;
 
-// api.getPopularFilms().then(console.log);
-// api.getInfoById(419704).then(console.log);
+  //console.log(text);
 
-// api.getMoviesByQuery('batman').then(console.log);
-// api.page = 2;
-// api.getMoviesByQuery('batman').then(console.log);
-// console.log(api.getPageFromLink());
-// console.log(api.getMovieIdFromLink());
+  reloadInt.showCardsByquery(text);
+  //console.log(refs.itemCard);
+});
 
+//console.log(refs.itemCard);

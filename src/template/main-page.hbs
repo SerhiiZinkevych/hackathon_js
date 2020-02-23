@@ -1,11 +1,17 @@
-
 <ul class="movie-cards">
     {{#each this}}
+<<<<<<< HEAD
     <li>
          <img src="https://image.tmdb.org/t/p/w500{{backdrop_path}}" alt="filmImg">
          <h2>{{title}}</h2>
          <p>{{release_date}}</p>
          <span>{{}}</span>
+=======
+    <li class="itemCard" data-movieID="{{id}}">
+        <img src="https://image.tmdb.org/t/p/w500{{backdrop_path}}" alt="filmImg">
+        <h2>{{title}}</h2>
+        <p>{{release_date}}</p>
+>>>>>>> c2e6f5981916d98cda1799896769bebe87a3124e
 
     </li>
     {{/each}}
