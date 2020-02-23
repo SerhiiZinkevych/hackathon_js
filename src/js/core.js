@@ -46,3 +46,4 @@ refs.sidebarWatchBtn.addEventListener('click', () => {
 refs.sidebarQueueBtn.addEventListener('click', () => {
   reloadInt.renderLibrary('queue');
 });
+

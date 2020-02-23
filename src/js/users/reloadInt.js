@@ -32,14 +32,61 @@ const user1 = {
       // console.log(markup);
       this.insertCardToMain(markup);
       this.rerenderButtons();
-
+      
       this.setOnclickAddWatch();
       this.setOnclickAddQueue();
+      api.getSimilarMovies(id).then(data => {
+        const similarMoviesMarkup = similarMoviesTemplate(data.results);
+        this.insertSimilarMoviesToCard(similarMoviesMarkup);
+        console.log(similarMoviesMarkup);
+        console.log(data.results);
+        $('.similarMovies').slick({
+          dots: true,
+          infinite: true,
+          speed: 300,
+          slidesToShow: 1,
+          centerMode: true,
+          variableWidth: true,
+          // slidesToScroll: 4,
+          centerPadding: '60px',
+          arrows: true,
+          autoplay: true,
+          responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                infinite: true,
+                dots: true,
+              },
+            },
+            {
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+              },
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+              },
+            },
+            // You can unslick at a given breakpoint now by adding:
+            // settings: "unslick"
+            // instead of a settings object
+          ],
+        });
+      }) 
 
-      const similarMoviesMarkup = similarMoviesTemplate(obj);
-      console.log(similarMoviesMarkup);
-      console.log(obj.backdrop_path);
-       this.insertSimilarMoviesToCard(similarMoviesMarkup);
+
+      // const similarMoviesMarkup = similarMoviesTemplate(obj);
+      // console.log(similarMoviesMarkup);
+      // console.log(obj.backdrop_path);
+      //  this.insertSimilarMoviesToCard(similarMoviesMarkup);
 
     });
   },
