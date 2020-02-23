@@ -4,6 +4,7 @@ import mainPageTemplate from '../../template/main-page.hbs';
 import similarMoviesTemplate from '../../template/similar-movies.hbs'
 import api from '../api';
 import localStorageJs from '../localStorageJS';
+import button from '../btn';
 
 const obj = [{
   backdrop_path: "/TU9NIjwzjoKPwQHoHshkFcQUCG.jpg"}]
@@ -17,6 +18,7 @@ const user1 = {
       );
       // console.log(data.results);
       const markup = mainPageTemplate(data.results);
+      refs.cardList.innerHTML = '';
       this.insertCardsToMainPage(markup);
       this.setOnclick();
       // console.log(data.results[0].release_date.split('-')[0]);
@@ -24,10 +26,13 @@ const user1 = {
   },
   card(id) {
     api.getInfoById(id).then(data => {
+      button.offLoadBtn();
       // console.log(data);
       const markup = cardTemplate(data);
       // console.log(markup);
       this.insertCardToMain(markup);
+      this.rerenderButtons();
+
       this.setOnclickAddWatch();
       this.setOnclickAddQueue();
 
@@ -57,7 +62,6 @@ const user1 = {
     refs.textArea.hidden = true;
   },
   insertCardsToMainPage(items) {
-    refs.cardList.innerHTML = '';
     refs.cardList.insertAdjacentHTML('beforeend', items);
   },
   showCardsByquery(query) {
@@ -158,6 +162,7 @@ const user1 = {
     });
   },
   renderLibrary(type = 'watched') {
+    button.offLoadBtn();
     let data = '';
     if (type === 'watched') {
       data = localStorageJs.getWatchedMovieIdToLocalStorage();
@@ -165,6 +170,7 @@ const user1 = {
       data = localStorageJs.getQueueMovieIdToLocalStorage();
     }
     refs.textArea.hidden = true;
+    refs.cardList.innerHTML = '';
     const markup = mainPageTemplate(data);
     this.insertCardsToMainPage(markup);
     this.setOnclick();

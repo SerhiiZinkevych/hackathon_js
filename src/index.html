@@ -10,29 +10,35 @@
 
   <body>
     <header class="page-header">
-      <nav class="container page-nav">
-        <a href="#" class="site-logo" onclick="location.replace('/')"
-          >Filmoteka</a
-        >
-        <ul class="list site-navigation">
-          <li class="site-navigation__item">
-            <a
-              href="#"
-              class="link site-navigation__link"
-              id="nav-home"
-              onclick="location.replace('/')"
-              >Home</a
-            >
-          </li>
-          <li class="site-navigation__item">
-            <a href="#" class="link site-navigation__link" id="nav-libery"
-              >My Library</a
-            >
-          </li>
-        </ul>
+      <div class="nav-container">
+        <nav class="container page-nav">
+          <a href="#" class="site-logo" onclick="location.replace('/')"
+            >Filmoteka</a
+          >
+          <ul class="list site-navigation">
+            <li class="site-navigation__item">
+              <a
+                href="#"
+                class="link site-navigation__link"
+                id="nav-home"
+                onclick="location.replace('/')"
+                >Home</a
+              >
+            </li>
+            <li class="site-navigation__item">
+              <a href="#" class="link site-navigation__link" id="nav-libery"
+                >My Library</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <nav class="sidebar">
+        <input class="sidebar_watch" type="button" value="Add Watch" />
+        <input class="sidebar_queue" type="button" value="Add Queue" />
       </nav>
     </header>
-    <main class="container" id="container">
+    <main class="main container" id="container">
       <form class="search-form" action="" method="get">
         <input
           name="s"
@@ -41,13 +47,11 @@
           id="search-form"
         />
       </form>
-      <section>
+      <section class="card_container">
         <!-- В этот список рендерим сарточки -->
-        <!-- <ul class="card__list">
-          <li class="card__link"></li>
-        </ul> -->
         <div class="card_list container"></div>
       </section>
+      <input class="loadMoreBtn" type="button" value="Load More......" />
     </main>
 
     <footer class="footer">

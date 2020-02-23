@@ -8,14 +8,10 @@ const refs = {
   cardContainer: document.querySelector('#container'),
   cardList: document.querySelector('.card_list'),
   library: document.querySelector('#nav-libery'),
-  //itemCard: document.querySelectorAll('.itemCard'),
-  // form: document.querySelector('.search-form'),
-  // homeBtn: document.querySelector('#nav-home'),
-  // libraryBtn: document.querySelector('#nav-libery'),
-  // cards: document.querySelectorAll('.card__link'),
-  test() {
-    console.log(`${Object.getOwnPropertyNames(this)} OK`);
-  },
+  sidebar: document.querySelector('.sidebar'),
+  sidebarWatchBtn: document.querySelector('.sidebar_watch'),
+  sidebarQueueBtn: document.querySelector('.sidebar_queue'),
+  loadMoreBtn: document.querySelector('.loadMoreBtn'),
 };
 
 export default refs;
