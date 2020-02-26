@@ -24,11 +24,17 @@ const updateUI = {
       .getInfoById(id)
       .then(data => this.createMarkup(data, cardTemplate, refs.cardList))
       .then(() => {
+        refs.btnAddWatch = document.querySelector('.btnAddWatch');
+        refs.btnAddQueue = document.querySelector('.btnAddQueue');
+
         this.rerenderButtons();
+
         refs.btnAddWatch.addEventListener('click', addToWatched);
         refs.btnAddQueue.addEventListener('click', addToQueue);
+      })
+      .then(() => {
+        this.renderSimilarMovies();
       });
-    this.renderSimilarMovies();
   },
   renderSimilarMovies() {
     api
@@ -56,8 +62,6 @@ const updateUI = {
   },
 
   rerenderButtons() {
-    refs.btnAddWatch = document.querySelector('.btnAddWatch');
-    refs.btnAddQueue = document.querySelector('.btnAddQueue');
     const watchedLS = localStorageJs.getWatchedMovieIdToLocalStorage();
     let isWatched = false;
     let isQueued = false;
@@ -72,7 +76,6 @@ const updateUI = {
         movie => movie.id === Number(refs.btnAddQueue.dataset.movieid),
       );
     }
-
     if (isWatched) {
       refs.btnAddWatch.textContent = 'Remove from watched';
       refs.btnAddWatch.dataset.action = 'remove';
@@ -97,7 +100,7 @@ function addToWatched(e) {
     api
       .getInfoById(movieId)
       .then(localStorageJs.setWatchedMovieIdToLocalStorage)
-      .then(this.rerenderButtons);
+      .then(updateUI.rerenderButtons);
   } else if (e.currentTarget.dataset.action === 'remove') {
     localStorageJs.deleteWatchedMovieIdFromLocalStorage(movieId);
     updateUI.rerenderButtons();
@@ -110,7 +113,7 @@ function addToQueue(e) {
     api
       .getInfoById(movieId)
       .then(localStorageJs.setQueueMovieIdToLocalStorage)
-      .then(this.rerenderButtons);
+      .then(updateUI.rerenderButtons);
   } else if (e.currentTarget.dataset.action === 'remove') {
     localStorageJs.deleteQueueMovieIdFromLocalStorage(movieId);
     updateUI.rerenderButtons();

@@ -11,7 +11,9 @@ btn.hideCloseBtn();
 btn.showSearchForm();
 
 refs.cardList.addEventListener('click', e => {
-  updateUI.card(e.target.parentNode.parentNode.dataset.movieid);
+  if (e.target.parentNode.nodeName === 'A') {
+    updateUI.card(e.target.parentNode.parentNode.dataset.movieid);
+  }
 });
 
 refs.serchForm.addEventListener('submit', e => {
