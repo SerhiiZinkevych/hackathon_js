@@ -1,38 +1,42 @@
 import refs from './refs';
 const btn = {
-  offSidebar() {
+  hideSearchForm() {
+    refs.textArea.hidden = true;
+  },
+  showSearchForm() {
+    refs.textArea.hidden = false;
+  },
+  hideSidebar() {
     refs.sidebar.classList.add('hide');
   },
-  onSidebar() {
+  showSidebar() {
     refs.sidebar.classList.remove('hide');
   },
-  offLoadBtn() {
+  hideLoadBtn() {
     refs.loadMoreBtn.classList.add('hide');
   },
-  onLoadBtn() {
+  showLoadBtn() {
     refs.loadMoreBtn.classList.remove('hide');
   },
-  offCloseBtn() {
+  hideCloseBtn() {
     const markup = document.querySelectorAll('.close');
-    console.log(markup);
     for (const li of markup) {
       li.classList.add('hide');
-      console.log(li);
     }
   },
-  onCloseBtn() {
+  showCloseBtn() {
     Array.from(refs.closeBtn).map(item => item.classList.remove('hide'));
   },
-  onWatchBtn() {
+  activeWatchBtn() {
     refs.sidebarWatchBtn.classList.add('active');
   },
-  offWatchBtn() {
+  disactiveWatchBtn() {
     refs.sidebarWatchBtn.classList.remove('active');
   },
-  onQueueBtn() {
+  activeQueueBtn() {
     refs.sidebarQueueBtn.classList.add('active');
   },
-  offQueueBtn() {
+  disactiveQueueBtn() {
     refs.sidebarQueueBtn.classList.remove('active');
   },
 };
