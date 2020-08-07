@@ -12,20 +12,16 @@ const user1 = {
       data.results.map(
         elem => (elem.release_date = elem.release_date.split('-')[0]),
       );
-      // console.log(data.results);
       const markup = mainPageTemplate(data.results);
       refs.cardList.innerHTML = '';
       this.insertCardsToMainPage(markup);
       this.setOnclick();
-      // console.log(data.results[0].release_date.split('-')[0]);
     });
   },
   card(id) {
     api.getInfoById(id).then(data => {
       button.offLoadBtn();
-      // console.log(data);
       const markup = cardTemplate(data);
-      // console.log(markup);
       this.insertCardToMain(markup);
       this.rerenderButtons();
 
@@ -34,8 +30,6 @@ const user1 = {
       api.getSimilarMovies(id).then(data => {
         const similarMoviesMarkup = similarMoviesTemplate(data.results);
         this.insertSimilarMoviesToCard(similarMoviesMarkup);
-        //console.log(similarMoviesMarkup);
-        //console.log(data.results);
         $('.similarMovies').slick({
           dots: true,
           infinite: true,
@@ -77,11 +71,6 @@ const user1 = {
           ],
         });
       });
-
-      // const similarMoviesMarkup = similarMoviesTemplate(obj);
-      // console.log(similarMoviesMarkup);
-      // console.log(obj.backdrop_path);
-      //  this.insertSimilarMoviesToCard(similarMoviesMarkup);
     });
   },
 
@@ -104,9 +93,6 @@ const user1 = {
   },
   insertCardsToMainPage(items) {
     refs.cardList.insertAdjacentHTML('beforeend', items);
-    // Array.from(document.querySelectorAll('.close')).map(item =>
-    //   item.classList.remove('hide'),
-    // );
   },
   showCardsByquery(query) {
     api.getMoviesByQuery(query).then(data => {
@@ -120,7 +106,6 @@ const user1 = {
   },
   setOnclick() {
     const markup = document.querySelectorAll('.itemCard');
-    // console.log(markup);
     for (const li of markup) {
       li.addEventListener('click', e => {
         if (e.target.nodeName != 'A') {
@@ -132,7 +117,6 @@ const user1 = {
   },
   setOnclickAddWatch() {
     const buttonAddWatch = document.querySelector('.btnAddWatch');
-    //console.log(buttonAddWatch);
     buttonAddWatch.addEventListener('click', e => {
       const id = e.currentTarget.dataset.movieid;
       if (buttonAddWatch.dataset.action === 'add') {
@@ -144,11 +128,11 @@ const user1 = {
       } else if (buttonAddWatch.dataset.action === 'remove') {
         api
           .getInfoById(id)
-          .then(localStorageJs.deleteWatchedMovieIdFromLocalStorage)
+          .then(obj =>
+            localStorageJs.deleteWatchedMovieIdFromLocalStorage(obj.id),
+          )
           .then(this.rerenderButtons);
       }
-      //getObj.then(console.log);
-      // console.log(localStorageJs.getWatchedMovieIdToLocalStorage());
     });
   },
   rerenderButtons() {
@@ -168,7 +152,6 @@ const user1 = {
         movie => movie.id === Number(buttonAddQueue.dataset.movieid),
       );
     }
-    // console.log(isWatched);
 
     if (isWatched) {
       buttonAddWatch.textContent = 'Remove from watched';
@@ -199,11 +182,11 @@ const user1 = {
       } else if (buttonAddQueue.dataset.action === 'remove') {
         api
           .getInfoById(id)
-          .then(localStorageJs.deleteQueueMovieIdFromLocalStorage)
+          .then(obj =>
+            localStorageJs.deleteQueueMovieIdFromLocalStorage(obj.id),
+          )
           .then(this.rerenderButtons);
       }
-      //getObj.then(console.log);
-      // console.log(localStorageJs.getWatchedMovieIdToLocalStorage());
     });
   },
   renderLibrary(type = 'watched') {
@@ -225,7 +208,6 @@ const user1 = {
       item.addEventListener('click', e => {
         e.preventDefault();
         const id = e.currentTarget.dataset.movieid;
-        console.log(id);
 
         if (type === 'watched') {
           localStorageJs.deleteWatchedMovieIdFromLocalStorage(id);
@@ -243,15 +225,6 @@ const user1 = {
         Array.from(document.querySelectorAll('.close')).map(item =>
           item.classList.remove('hide'),
         );
-        // item.classList.remove('hide');
-        // if (type === 'watched') {
-        //   data = localStorageJs.getWatchedMovieIdToLocalStorage();
-        // } else if (type === 'queue') {
-        //   data = localStorageJs.getQueueMovieIdToLocalStorage();
-        // }
-        // refs.cardList.innerHTML = mainPageTemplate(data);
-        // // const markup = mainPageTemplate(data);
-        // // this.insertCardsToMainPage(markup);
       });
     });
   },
