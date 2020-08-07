@@ -1,54 +1,56 @@
-import imagesLoaded from 'imagesloaded';
-import lodash from 'lodash';
-import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
-//---------------------------------------------------
-import imageCardTemplate from '../template/card.hbs';
 import refs from './refs';
-import myPnotify from './pnotifyAlerts';
-import proxyElement from './proxyElemen';
 //---------------------------------------------------
-import reloadInt from './users/reloadInt';
+import updateUI from './updateUI';
 import api from './api';
-import button from './btn';
+import btn from './btn';
 
-button.offSidebar();
-button.offLoadBtn();
-button.offCloseBtn();
+btn.hideSidebar();
+btn.hideLoadBtn();
+btn.hideCloseBtn();
+btn.showSearchForm();
+
+refs.cardList.addEventListener('click', e => {
+  if (e.target.parentNode.nodeName === 'A') {
+    updateUI.card(e.target.parentNode.parentNode.dataset.movieid);
+  }
+});
 
 refs.serchForm.addEventListener('submit', e => {
-  button.onLoadBtn();
-  api.currPage = 1;
   e.preventDefault();
+  btn.showLoadBtn();
+  api.currPage = 1;
   refs.cardList.innerHTML = '';
-  const text = refs.textArea.value;
-  reloadInt.showCardsByquery(text);
+  updateUI.cardsByQuerry();
 });
 
 const movieId = api.getMovieIdFromLink();
 
 if (movieId) {
-  reloadInt.card(movieId);
+  updateUI.card(movieId);
 } else {
-  reloadInt.mainPage();
+  updateUI.mainPage();
 }
-refs.library.addEventListener('click', () => {
-  reloadInt.renderLibrary();
-  button.onSidebar();
-  button.onWatchBtn();
-});
 
 refs.loadMoreBtn.addEventListener('click', () => {
-  reloadInt.showCardsByquery(refs.textArea.value);
+  updateUI.cardsByQuerry(true);
+});
+
+refs.library.addEventListener('click', () => {
+  updateUI.renderLibraryWatched();
+  btn.hideSearchForm();
+  btn.showSidebar();
+  btn.activeWatchBtn();
 });
 
 refs.sidebarWatchBtn.addEventListener('click', () => {
-  reloadInt.renderLibrary('watched');
-  button.onWatchBtn();
-  button.offQueueBtn();
+  updateUI.renderLibraryWatched();
+  btn.activeWatchBtn();
+  btn.disactiveQueueBtn();
 });
+
 refs.sidebarQueueBtn.addEventListener('click', () => {
-  reloadInt.renderLibrary('queue');
-  button.offWatchBtn();
-  button.onQueueBtn();
+  updateUI.renderLibraryQueued();
+  btn.activeQueueBtn();
+  btn.disactiveWatchBtn();
 });

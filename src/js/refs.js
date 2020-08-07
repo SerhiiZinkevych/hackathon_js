@@ -12,6 +12,8 @@ const refs = {
   sidebarWatchBtn: document.querySelector('.sidebar_watch'),
   sidebarQueueBtn: document.querySelector('.sidebar_queue'),
   loadMoreBtn: document.querySelector('.loadMoreBtn'),
+  btnAddWatch: document.querySelector('.btnAddWatch'),
+  btnAddQueue: document.querySelector('.btnAddQueue'),
 };
 
 export default refs;

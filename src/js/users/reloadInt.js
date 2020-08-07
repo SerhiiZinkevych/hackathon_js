@@ -121,10 +121,7 @@ const user1 = {
       const id = e.currentTarget.dataset.movieid;
       if (buttonAddWatch.dataset.action === 'add') {
         const saveData = localStorageJs.setWatchedMovieIdToLocalStorage;
-        api
-          .getInfoById(id)
-          .then(saveData)
-          .then(this.rerenderButtons);
+        api.getInfoById(id).then(saveData).then(this.rerenderButtons);
       } else if (buttonAddWatch.dataset.action === 'remove') {
         api
           .getInfoById(id)
@@ -175,10 +172,7 @@ const user1 = {
       const id = e.currentTarget.dataset.movieid;
       if (buttonAddQueue.dataset.action === 'add') {
         const saveData = localStorageJs.setQueueMovieIdToLocalStorage;
-        api
-          .getInfoById(id)
-          .then(saveData)
-          .then(this.rerenderButtons);
+        api.getInfoById(id).then(saveData).then(this.rerenderButtons);
       } else if (buttonAddQueue.dataset.action === 'remove') {
         api
           .getInfoById(id)
